@@ -1,5 +1,7 @@
-* af35357 (HEAD) Set build VERSION number build-master-9
-* 6934d66 (origin/master, origin/HEAD, master) Updated homepage and layout
+* 9446986 (HEAD) Set build VERSION number build-build-master-9-10
+* 94827bf (tag: build-master-9) Created changelog
+* af35357 Set build VERSION number build-master-9
+* 6934d66 Updated homepage and layout
 * ee18b39 Renamed changelog & added file
 * 88c0c42 Version & Changelog will be generated
 * a9f0eed Updated git ignore & committed composer lock file
