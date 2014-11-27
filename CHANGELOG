@@ -1,4 +1,6 @@
-* 5214316 (HEAD) Set build VERSION number build-build-master-6-7
+* dcf6787 (HEAD) Set build VERSION number build-build-build-master-6-7-8
+* e08effc (tag: build-build-master-6-7) Created changelog
+* 5214316 Set build VERSION number build-build-master-6-7
 * 430c710 (tag: build-master-6) Created changelog
 * 7522527 Set build VERSION number build-master-6
 * ee18b39 Renamed changelog & added file
