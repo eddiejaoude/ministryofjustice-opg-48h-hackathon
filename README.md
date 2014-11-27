@@ -24,4 +24,4 @@ Best way to do this is copy `local.php.dist` to `local.php` and update parameter
 
 4. Run built-in php webserver
 
-`php -S 0.0.0.0:8000` and point your browser to `http://localhost:8000`
+`php -S 0.0.0.0:8000 -t public` and point your browser to `http://localhost:8000`
