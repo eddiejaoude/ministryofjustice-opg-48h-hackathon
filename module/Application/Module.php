@@ -48,11 +48,7 @@ class Module
             'factories' => array(
                 'elasticsearch.client' => function($sm) {
                     return new Client(
-                        array(
-                            'hosts' => array(
-                                'localhost:9201'
-                            )
-                        )
+                        $sm->get('config')['elasticsearch']['cluster']
                     );
                 },
                 'application.service.elasticsearch' => function($sm) {
