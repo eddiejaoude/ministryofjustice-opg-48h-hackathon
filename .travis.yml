@@ -19,3 +19,6 @@ after_success:
 env:
   global:
     - secure: jA0BeOGANgK2z9Zdx0wEwQ0z7A763Co3UM/TvtQdrzDgBnflBAdfQXRLRHV4DI0wyRnWahxDwGVsRUI2/IimntRj3qk3PMEi2ziDrJbb0bjazjb9WhFrYfNlNB3qAia2GNrbw2qnHgLBV63KNvhd/wzXWePNRk93hrpyJ+tGjj8=
+branches:
+  except:
+    - /^build-[0-9a-z\-]*/
