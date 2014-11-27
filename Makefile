@@ -29,8 +29,8 @@ build.version:
 	git commit -m "Set build VERSION number $(GIT_TAG)" VERSION
 
 build.changelog:
-	git log --decorate --all --oneline --graph > changelog
-	git commit -m "Created changelog" changelog
+	git log --decorate --all --oneline --graph > CHANGELOG
+	git commit -m "Created changelog" CHANGELOG
 
 build.tag:
 	git tag $(GIT_TAG) -a -m "Generated tag from TravisCI build $(TRAVIS_BUILD_NUMBER)"
