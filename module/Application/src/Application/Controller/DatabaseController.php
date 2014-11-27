@@ -9,6 +9,15 @@ class DatabaseController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        return new ViewModel(
+            array(
+                'statistics' => $this->getServiceLocator()
+                    ->get('application.service.database')
+                    ->getStats(),
+                'sql' => $this->getServiceLocator()
+                    ->get('application.service.database')
+                    ->getSql()
+            )
+        );
     }
 }

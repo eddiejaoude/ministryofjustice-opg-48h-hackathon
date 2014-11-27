@@ -12,5 +12,13 @@ return array(
         'cluster' => array(
             'hosts' => $hosts
         )
+    ),
+    'database' => array(
+        'driver' => 'Pdo_Pgsql',
+        'hostname' => getenv('DB_URL'),
+        'port' => getenv('DB_PORT'),
+        'database' => getenv('DB_NAME'),
+        'username' => getenv('DB_USER'),
+        'password' => getenv('DEB_PASSWORD')
     )
 );
