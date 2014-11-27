@@ -1,0 +1,14 @@
+* e5c47bd (HEAD) Set build VERSION number build-master-33
+* e886ae8 (origin/master, origin/HEAD, master) Version & Changelog display in layout
+* eedee3a updated composer lock
+* fab6582 Added Ordnance Survey postcode coordinate data to data dump
+* 3f9403c Added missing controllers
+* f71105b Added travis ignore to github tags
+* 6934d66 Updated homepage and layout
+* ee18b39 Renamed changelog & added file
+* 88c0c42 Version & Changelog will be generated
+* a9f0eed Updated git ignore & committed composer lock file
+* 6e5164e Deploy to Test after successful build
+* 4e66365 Added Postgres data dump
+* 228ff07 An example unit test added & linked to Travis CI
+* c576948 Initial ZF2 commit
