@@ -1,0 +1,8 @@
+* 7522527 (HEAD) Set build VERSION number build-master-6
+* ee18b39 (origin/master, origin/HEAD, master) Renamed changelog & added file
+* 88c0c42 Version & Changelog will be generated
+* a9f0eed Updated git ignore & committed composer lock file
+* 6e5164e Deploy to Test after successful build
+* 4e66365 Added Postgres data dump
+* 228ff07 An example unit test added & linked to Travis CI
+* c576948 Initial ZF2 commit
