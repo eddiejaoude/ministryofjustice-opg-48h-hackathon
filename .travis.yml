@@ -1,12 +1,16 @@
 language: php
-
 php:
-  - 5.5
-
+- 5.5
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --no-interaction
-
+- curl -s http://getcomposer.org/installer | php
+- php composer.phar install --dev --no-interaction
 script:
-  - mkdir -p tests/build/logs
-  - vendor/bin/phpunit -c ./tests/phpunit.xml
+- mkdir -p tests/build/logs
+- vendor/bin/phpunit -c ./tests/phpunit.xml
+deploy:
+  provider: heroku
+  api_key:
+    secure: pEKOJDMcyYkq2CInXqjrbeeQuOkhLzGY6v6hK1b6EXt1mKXXtU3qUakBreQcva34T7gko6ROYXSQ8MDBXgNKU+/xmX0ZTHwjjNn8MWn6rcHYi9iZtiiTcPh6jeWxCzu7auLU9Znj1N1r9b/Dl4pOB3tmkpAzBRj7goZkw0ANE2g=
+  app: moj-opg-48hr-hackathon
+  on:
+    repo: eddiejaoude/ministryofjustice-opg-48h-hackathon
