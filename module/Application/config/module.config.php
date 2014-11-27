@@ -79,7 +79,7 @@ return array(
             'elasticsearch' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/database',
+                    'route'    => '/elasticsearch',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Elasticsearch',
@@ -102,13 +102,13 @@ return array(
                     ),
                 ),
             ),
-            'cases' => array(
+            'case' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/database',
+                    'route'    => '/case',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Cases',
+                        'controller'    => 'Case',
                         'action'        => 'index',
                     ),
                 ),
@@ -151,7 +151,10 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Case' => 'Application\Controller\CaseController',
+            'Application\Controller\Database' => 'Application\Controller\DatabaseController',
+            'Application\Controller\Elasticsearch' => 'Application\Controller\ElasticsearchController',
         ),
     ),
     'view_manager' => array(
