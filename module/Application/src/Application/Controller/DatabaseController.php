@@ -11,6 +11,9 @@ class DatabaseController extends AbstractActionController
     {
         return new ViewModel(
             array(
+                'tables' => $this->getServiceLocator()
+                    ->get('application.service.database')
+                    ->getTableList(),
                 'statistics' => $this->getServiceLocator()
                     ->get('application.service.database')
                     ->getStats(),

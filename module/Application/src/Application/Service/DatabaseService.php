@@ -29,4 +29,16 @@ class DatabaseService
     {
         return new Sql($this->client);
     }
+    
+    public function getTableList()
+    {
+        $connection = $this->client->getDriver()->getConnection();
+        $result = $connection->execute('select * from information_schema.tables');
+        
+        $stmt = $result->getResource();
+        
+        $resultSet = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        
+        var_dump($resultSet);
+    }
 }
