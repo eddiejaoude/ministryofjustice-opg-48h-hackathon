@@ -1,0 +1,24 @@
+<h2>Elastic Search Statistics</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Index</td>
+            <td>Total</td>
+            <td>Size (bytes)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach($statistics['indices'] as $name=>$stat) {
+            ?>
+            <tr>
+                <td><?php echo $name; ?></td>
+                <td><?php echo $stat['primaries']['docs']['count']; ?></td>
+                <td><?php echo number_format($stat['primaries']['store']['size_in_bytes']); ?></td>
+            </tr>
+        <?php
+        }
+        ?>
+    </tbody>
+</table>

@@ -9,6 +9,8 @@
 
 namespace Application;
 
+use Application\Service\ElasticSearchService;
+use Elasticsearch\Client;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
@@ -34,6 +36,31 @@ class Module
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'elasticsearch.client' => function($sm) {
+                    return new Client(
+                        array(
+                            'hosts' => array(
+                                'localhost:9201'
+                            )
+                        )
+                    );
+                },
+                'application.service.elasticsearch' => function($sm) {
+                    return new ElasticSearchService(
+                        $sm->get('elasticsearch.client')
+                    );
+                },
+            )
         );
     }
 }

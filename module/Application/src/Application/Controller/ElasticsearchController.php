@@ -9,6 +9,12 @@ class ElasticsearchController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        return new ViewModel(
+            array(
+                'statistics' => $this->getServiceLocator()
+                            ->get('application.service.elasticsearch')
+                            ->getStats()
+            )
+        );
     }
 }
