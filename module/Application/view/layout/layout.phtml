@@ -38,6 +38,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class="disabled"><a href="<?php echo $this->url('home') ?>">v:<?php echo file_get_contents('VERSION'); ?></a></li>
                         <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                         <li><a href="<?php echo $this->url('database') ?>"><?php echo $this->translate('Database') ?></a></li>
                         <li><a href="<?php echo $this->url('elasticsearch') ?>"><?php echo $this->translate('ElasticSearch') ?></a></li>
