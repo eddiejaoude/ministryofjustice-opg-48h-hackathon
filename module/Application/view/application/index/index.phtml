@@ -5,15 +5,14 @@
 </div>
 
 <div class="row">
-
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Follow Development') ?></h3>
+                <h3 class="panel-title">Database Statistics</h3>
             </div>
             <div class="panel-body">
-                <p><?php echo sprintf($this->translate('Zend Framework 2 is under active development. If you are interested in following the development of ZF2, there is a special ZF2 portal on the official Zend Framework website which provides links to the ZF2 %swiki%s, %sdev blog%s, %sissue tracker%s, and much more. This is a great resource for staying up to date with the latest developments!'), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://framework.zend.com/zf2" target="_blank"><?php echo $this->translate('ZF2 Development Portal') ?> &raquo;</a></p>
+                <p>Database statistics</p>
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('database') ?>">Database Statistics &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -21,11 +20,11 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Discover Modules') ?></h3>
+                <h3 class="panel-title">Elastic Search Statistics</h3>
             </div>
             <div class="panel-body">
-                <p><?php echo sprintf($this->translate('The community is working on developing a community site to serve as a repository and gallery for ZF2 modules. The project is available %son GitHub%s. The site is currently live and currently contains a list of some of the modules already available for ZF2.'), '<a href="https://github.com/zendframework/modules.zendframework.com">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://modules.zendframework.com/" target="_blank"><?php echo $this->translate('Explore ZF2 Modules') ?> &raquo;</a></p>
+                <p>Elastic Search statistics</p>
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('elasticsearch') ?>">Elastic Search Statistics &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -33,11 +32,49 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Help &amp; Support') ?></h3>
+                <h3 class="panel-title">Case Overview</h3>
             </div>
             <div class="panel-body">
-                <p><?php echo sprintf($this->translate('If you need any help or support while developing with ZF2, you may reach us via IRC: %s#zftalk on Freenode%s. We\'d love to hear any questions or feedback you may have regarding the beta releases. Alternatively, you may subscribe and post questions to the %smailing lists%s.'), '<a href="irc://irc.freenode.net/zftalk">', '</a>', '<a href="http://framework.zend.com/wiki/display/ZFDEV/Mailing+Lists">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank"><?php echo $this->translate('Ping us on IRC') ?> &raquo;</a></p>
+                <p>Case overview</p>
+                <p><a class="btn btn-success pull-right" href="<?php echo $this->url('case') ?>">Case Overview &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Github Repository</h3>
+            </div>
+            <div class="panel-body">
+                <p>Link to <a href="https://github.com/eddiejaoude/ministryofjustice-opg-48h-hackathon">Github Repository</a></p>
+                <p><a class="btn btn-success pull-right" href="https://github.com/eddiejaoude/ministryofjustice-opg-48h-hackathon">Github Repository &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Travis CI Project</h3>
+            </div>
+            <div class="panel-body">
+                <p>Continuous Integration on <a href="https://travis-ci.org/eddiejaoude/ministryofjustice-opg-48h-hackathon">Travis CI project<a/></p>
+                <p><a class="btn btn-success pull-right" href="https://travis-ci.org/eddiejaoude/ministryofjustice-opg-48h-hackathon">Travis CI &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dashboard of Pipeline</h3>
+            </div>
+            <div class="panel-body">
+                <p>Github Commits & Travis CI build status dashboard</p>
+                <p><a class="btn btn-success pull-right" href="http://localhost:3030/github-travis">Pipeline Dashboard &raquo;</a></p>
             </div>
         </div>
     </div>
