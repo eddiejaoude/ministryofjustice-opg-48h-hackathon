@@ -1,5 +1,9 @@
 <style>
 
+    #chart svg {
+        height: 800px;
+    }
+
     #chart2 svg {
         height: 800px;
     }
@@ -8,6 +12,10 @@
 
 
 <h2>Database Statistics</h2>
+
+<!--<div id="chart">-->
+    <!--<svg></svg>-->
+<!--</div>-->
 
 <div id="chart2">
     <svg></svg>
@@ -38,7 +46,7 @@
 
 <script>
 
-//Regular pie chart example
+// Pie chart
 //nv.addGraph(function() {
 //    var chart = nv.models.pieChart()
 //            .x(function(d) { return d.label })
@@ -46,7 +54,7 @@
 //            .showLabels(true);
 //
 //    d3.select("#chart svg")
-//            .datum(pieTotal())
+//            .datum(pieSize())
 //            .transition().duration(350)
 //            .call(chart);
 //
@@ -79,9 +87,24 @@ function pieTotal() {
     return pieTotal;
 }
 
-function pieSize() {
-    var pieSize =  <?php echo json_encode($this->pieSize); ?>;
-    return pieSize;
-}
+//function pieSize() {
+
+//var pieSize =  <?php echo json_encode($this->pieSize); ?>;
+
+//    return [
+//        {
+//            label: 'A',
+//            value: 1220
+//        },
+//        {
+//            label: 'B',
+//            value: 2220
+//        },
+//        {
+//            label: 'C',
+//            value: 3220
+//        }
+//    ];
+//}
 
 </script>
