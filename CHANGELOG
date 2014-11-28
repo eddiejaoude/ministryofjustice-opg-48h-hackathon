@@ -1,0 +1,52 @@
+* a29892e (HEAD) Set build VERSION number build-master-59
+| * dd18828 (origin/master, origin/HEAD, master) Dropdown for event type
+|/  
+* 4da744a User events (filtered to tasks)
+* 50657e5 Broken pie size data
+* 786cf8f Styled user page & user list generated
+* 91b8844 Initial commit of user form
+* f1f2a1e Navigate for user.
+*   7098d9a Merge remote-tracking branch 'origin/master'
+|\  
+| * 7046f5d Updated routes and added new controllers
+| * 30591e4 Fixed typo in database password variable
+* | 7be8539 Pie chart sizing.
+|/  
+* 7ccfacd Skeleton User vertical slice added
+* 6514343 Manipulated data & connected to a pie graph
+* d9c2cb2 Merged database branch into master
+*   e17ca37 Added Queue to Navigation
+|\  
+| * 4a2f25b Database table list with size & count
+| * 9046208 Database select example
+| * b20f7e5 INCOMPLETE database page
+| * db03d7f Change variable scope for ES statistics
+| * 04c4786 Removed active navigation button
+* | de1fa38 Change variable scope for ES statistics
+* | e3f8737 Removed active navigation button
+* | 3ffd452 NVD3 example implementation.
+* | 7c0c77f Added NVD3 CSS file
+* | e9c8d2d Added NVD3 and its dependency D3.
+* | a3d020c Updated README
+|/  
+* 212b39f Running web server added to README
+* c71e741 Installation instructions in README
+* a5afe20 Using config for ES connection
+* d86cd01 ElasticSearch ENV VARs added for production (PaaS)
+* ec0d11e ElasticSearch basic over statistics - ES page
+* 8b1a0fd Added project service URLs to homepage & readme
+* 712b946 Added version to header of layout
+* 31d162c Created holding pages
+* e886ae8 Version & Changelog display in layout
+* eedee3a updated composer lock
+* fab6582 Added Ordnance Survey postcode coordinate data to data dump
+* 3f9403c Added missing controllers
+* f71105b Added travis ignore to github tags
+* 6934d66 Updated homepage and layout
+* ee18b39 Renamed changelog & added file
+* 88c0c42 Version & Changelog will be generated
+* a9f0eed Updated git ignore & committed composer lock file
+* 6e5164e Deploy to Test after successful build
+* 4e66365 Added Postgres data dump
+* 228ff07 An example unit test added & linked to Travis CI
+* c576948 Initial ZF2 commit
