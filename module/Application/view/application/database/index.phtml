@@ -1,9 +1,9 @@
 <style>
-    #chart2 {
-        width: 500px;
-        height: 500px;
-        border: 1px solid red;
+
+    #chart2 svg {
+        height: 800px;
     }
+
 </style>
 
 
@@ -13,22 +13,45 @@
     <svg></svg>
 </div>
 
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Table</td>
+        <td>Total</td>
+        <td>Size (bytes)</td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+            foreach($this->statistics as $tableName=>$stats) {
+            ?>
+    <tr>
+        <td><?php echo $tableName; ?></td>
+        <td><?php echo $stats['total']; ?></td>
+        <td><?php echo $stats['size']; ?></td>
+    </tr>
+    <?php
+            }
+            ?>
+    </tbody>
+    </table>
+
 <script>
 
 //Regular pie chart example
-nv.addGraph(function() {
-    var chart = nv.models.pieChart()
-            .x(function(d) { return d.label })
-            .y(function(d) { return d.value })
-            .showLabels(true);
-
-    d3.select("#chart svg")
-            .datum(pieTotal())
-            .transition().duration(350)
-            .call(chart);
-
-    return chart;
-});
+//nv.addGraph(function() {
+//    var chart = nv.models.pieChart()
+//            .x(function(d) { return d.label })
+//            .y(function(d) { return d.value })
+//            .showLabels(true);
+//
+//    d3.select("#chart svg")
+//            .datum(pieTotal())
+//            .transition().duration(350)
+//            .call(chart);
+//
+//    return chart;
+//});
 
 //Donut chart example
 nv.addGraph(function() {
@@ -52,34 +75,13 @@ nv.addGraph(function() {
 
 //Pie chart example data. Note how there is only a single array of key-value pairs.
 function pieTotal() {
-    return  <?php echo json_encode($this->pieTotal); ?>
+    var pieTotal =  <?php echo json_encode($this->pieTotal); ?>;
+    return pieTotal;
 }
 
 function pieSize() {
-    return  <?php echo json_encode($this->pieSize); ?>
+    var pieSize =  <?php echo json_encode($this->pieSize); ?>;
+    return pieSize;
 }
 
 </script>
-
-<table class="table table-hover">
-    <thead>
-    <tr>
-        <td>Table</td>
-        <td>Total</td>
-        <td>Size (bytes)</td>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    foreach($this->statistics as $tableName=>$stats) {
-        ?>
-        <tr>
-            <td><?php echo $tableName; ?></td>
-            <td><?php echo $stats['total']; ?></td>
-            <td><?php echo $stats['size']; ?></td>
-        </tr>
-    <?php
-    }
-    ?>
-    </tbody>
-</table>
