@@ -62,4 +62,17 @@ class DatabaseService
 
         return $resultSet[0]->count;
     }
+
+    public function getStatsForPieGraph(array $data, $extract)
+    {
+        $graphData = array();
+        foreach($data as $label=>$value) {
+            $graphData[] = array(
+                'label' => $label,
+                'value' => $value[$extract],
+            );
+        }
+
+        return $graphData;
+    }
 }

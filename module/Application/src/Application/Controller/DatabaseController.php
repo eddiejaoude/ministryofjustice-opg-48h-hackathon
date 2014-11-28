@@ -9,11 +9,19 @@ class DatabaseController extends AbstractActionController
 {
     public function indexAction()
     {
+        $statistics = $this->getServiceLocator()
+            ->get('application.service.database')
+            ->getStats();
+
         return new ViewModel(
             array(
-                'statistics' => $this->getServiceLocator()
+                'statistics' => $statistics,
+                'pieTotal' => $this->getServiceLocator()
                     ->get('application.service.database')
-                    ->getStats()
+                    ->getStatsForPieGraph($statistics, 'total'),
+                'pieSize' => $this->getServiceLocator()
+                    ->get('application.service.database')
+                    ->getStatsForPieGraph($statistics, 'size'),
             )
         );
     }
