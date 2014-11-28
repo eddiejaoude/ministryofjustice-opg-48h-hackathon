@@ -225,6 +225,11 @@ return array(
                 'route' => 'actorgraph',
                 'order' => 105,
             ),
+            array(
+                'label' => 'User',
+                'route' => 'user',
+                'order' => 106,
+            ),
         ),
     ),
     'service_manager' => array(
