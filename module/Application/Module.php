@@ -70,6 +70,7 @@ class Module
                 },
                 'application.service.user' => function($sm) {
                     return new UserService(
+                        $sm->get('database.adapter'),
                         $sm->get('elasticsearch.client')
                     );
                 },

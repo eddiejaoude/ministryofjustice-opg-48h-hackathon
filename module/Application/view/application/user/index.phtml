@@ -1,112 +1,43 @@
+
 <h2>User</h2>
 
-<div>
+<div class="row">
 
-    <form action="eddies_script.php" method="POST">
+    <form class="form-inline" role="form">
 
-        <select id="user">
-            <option name="user" value="mickeyMouse">Mickey Mouse</option>
-            <option name="user" value="donaldDuck">Donald Duck</option>
-            <option name="user" value="minnieMouse">Minnie Mouse</option>
-            <option name="user" value="pluto">Pluto</option>
+        <select class="form-control" name="email">
+            <?php
+            foreach($this->assignees as $assignee) {
+            ?>
+                <option value="<?php echo $assignee['id']; ?>"><?php echo $assignee['email']; ?></option>
+            <?php
+            }
+            ?>
         </select>
 
-        <select id="range">
-            <option name="range" value="1000">1000</option>
-            <option name="range" value="2000">2000</option>
-            <option name="range" value="3000">3000</option>
-            <option name="range" value="4000">4000</option>
+        <select class="form-control" name="range">
+            <option value="24">24hrs</option>
+            <option value="48">48hrs</option>
         </select>
 
-        <span class="badge badge-success">This is a badge</span>
-
-        <input type="submit" value="Submit" />
-
-        <div role="tabpanel">
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="home">
-                    <table >
-                        <thead>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>C</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>AAAAAAAAA</td>
-                                <td>BBBBBBBBB</td>
-                                <td>CCCCCCCCC</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="profile">
-                    <table >
-                        <thead>
-                        <tr>
-                            <td>D</td>
-                            <td>E</td>
-                            <td>F</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>DDDDDDDDD</td>
-                            <td>EEEEEEEEE</td>
-                            <td>FFFFFFFFF</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-
+        <button type="submit" class="btn btn-default">GO</button>
     </form>
+
 
 </div>
 
-<style>
+<div class="row">
+    <div class="alert alert-info pull-left" role="alert">Total Hours 42</div>
+    <div class="alert alert-success pull-left" role="alert">Productivety 4.5</div>
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 15px;
-}
-
-</style>
-
-<script>
-
-    $('#myTab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
+</div>
 
 
-    $('#user').change(function (evt) {
+<div class="row">
 
-        var user = $(this).val();
-        console.log(user);
-    });
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">History</a></li>
+        <li role="presentation"><a href="#">Future</a></li>
+    </ul>
 
-    $('#range').change(function (evt) {
-
-        var range = $(this).val();
-        console.log(range);
-    });
-
-
-</script>
+</div>
