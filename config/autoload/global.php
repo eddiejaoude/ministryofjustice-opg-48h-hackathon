@@ -19,6 +19,6 @@ return array(
         'port' => getenv('DB_PORT'),
         'database' => getenv('DB_NAME'),
         'username' => getenv('DB_USER'),
-        'password' => getenv('DEB_PASSWORD')
+        'password' => getenv('DB_PASSWORD')
     )
 );
