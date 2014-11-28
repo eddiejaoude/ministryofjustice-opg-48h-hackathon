@@ -1,1 +1,112 @@
 <h2>User</h2>
+
+<div>
+
+    <form action="eddies_script.php" method="POST">
+
+        <select id="user">
+            <option name="user" value="mickeyMouse">Mickey Mouse</option>
+            <option name="user" value="donaldDuck">Donald Duck</option>
+            <option name="user" value="minnieMouse">Minnie Mouse</option>
+            <option name="user" value="pluto">Pluto</option>
+        </select>
+
+        <select id="range">
+            <option name="range" value="1000">1000</option>
+            <option name="range" value="2000">2000</option>
+            <option name="range" value="3000">3000</option>
+            <option name="range" value="4000">4000</option>
+        </select>
+
+        <span class="badge badge-success">This is a badge</span>
+
+        <input type="submit" value="Submit" />
+
+        <div role="tabpanel">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <table >
+                        <thead>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>C</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AAAAAAAAA</td>
+                                <td>BBBBBBBBB</td>
+                                <td>CCCCCCCCC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <table >
+                        <thead>
+                        <tr>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>DDDDDDDDD</td>
+                            <td>EEEEEEEEE</td>
+                            <td>FFFFFFFFF</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<style>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+
+</style>
+
+<script>
+
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+
+
+    $('#user').change(function (evt) {
+
+        var user = $(this).val();
+        console.log(user);
+    });
+
+    $('#range').change(function (evt) {
+
+        var range = $(this).val();
+        console.log(range);
+    });
+
+
+</script>
