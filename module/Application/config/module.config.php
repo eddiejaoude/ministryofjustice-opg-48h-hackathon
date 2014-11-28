@@ -138,6 +138,43 @@ return array(
                         'action'        => 'index',
                     ),
                 ),
+            ),
+            'heatmap' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/heatmap',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Heatmap',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'actorgraph' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/actorgraph',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Actorgraph',
+                        'action'        => 'index',
+                    ),
+                ),
                 'may_terminate' => true,
                 'child_routes' => array(
                     'default' => array(
@@ -156,10 +193,47 @@ return array(
             ),
         ),
     ),
+    'navigation' => array(
+        'default' => array(
+            array(
+                'label' => 'Home', // the link label - the text rendered
+                'route' => 'application', // the name of your route (defined in the router key). Of course, if you'd wish to use a link outside your application, you won't use the 'route' key.
+                'order' => 100, // set the weight of the menu items
+            ),
+            array(
+                'label' => 'Database',
+                'route' => 'database',
+                'order' => 101,
+            ),
+            array(
+                'label' => 'Elastic',
+                'route' => 'elasticsearch',
+                'order' => 102,
+            ),
+            array(
+                'label' => 'Case',
+                'route' => 'case',
+                'order' => 103,
+            ),
+            array(
+                'label' => 'Heatmap',
+                'route' => 'heatmap',
+                'order' => 104,
+            ),
+            array(
+                'label' => 'Actor Graph',
+                'route' => 'actorgraph',
+                'order' => 105,
+            ),
+        ),
+    ),
     'service_manager' => array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
+        ),
+        'factories' => array(
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
@@ -182,6 +256,8 @@ return array(
             'Application\Controller\Database' => 'Application\Controller\DatabaseController',
             'Application\Controller\Elasticsearch' => 'Application\Controller\ElasticsearchController',
             'Application\Controller\User' => 'Application\Controller\UserController',
+            'Application\Controller\Heatmap' => 'Application\Controller\HeatmapController',
+            'Application\Controller\Actorgraph' => 'Application\Controller\ActorgraphController',
         ),
     ),
     'view_manager' => array(

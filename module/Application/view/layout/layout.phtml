@@ -40,15 +40,7 @@
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>">Pinecone Free</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="disabled"><a href="<?php echo $this->url('home') ?>">v:<?php echo file_get_contents('VERSION'); ?></a></li>
-                        <li><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
-                        <li><a href="<?php echo $this->url('database') ?>"><?php echo $this->translate('Database') ?></a></li>
-                        <li><a href="<?php echo $this->url('elasticsearch') ?>"><?php echo $this->translate('ElasticSearch') ?></a></li>
-                        <li class="disabled"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Queues') ?></a></li>
-                        <li class="disabled"><a href="<?php echo $this->url('case') ?>"><?php echo $this->translate('Case') ?></a></li>
-                        <li><a href="<?php echo $this->url('user') ?>"><?php echo $this->translate('User') ?></a></li>
-                    </ul>
+                    <?php echo $this->navigation('navigation')->menu()->setUlClass('nav navbar-nav')->setMaxDepth(0) ;?>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
