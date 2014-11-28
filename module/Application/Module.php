@@ -9,6 +9,7 @@
 
 namespace Application;
 
+use Application\Service\DatabaseService;
 use Application\Service\ElasticSearchService;
 use Elasticsearch\Client;
 use Zend\Mvc\ModuleRouteListener;
@@ -51,9 +52,19 @@ class Module
                         $sm->get('config')['elasticsearch']['cluster']
                     );
                 },
+                'database.adapter' => function($sm) {
+                    return new \Zend\Db\Adapter\Adapter(
+                        $sm->get('config')['database']
+                    );
+                },
                 'application.service.elasticsearch' => function($sm) {
                     return new ElasticSearchService(
                         $sm->get('elasticsearch.client')
+                    );
+                },
+                'application.service.database' => function($sm) {
+                    return new DatabaseService(
+                        $sm->get('database.adapter')
                     );
                 },
             )

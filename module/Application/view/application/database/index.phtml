@@ -7,11 +7,11 @@
 </style>
 
 
-    <h2>Database Statistics</h2>
+<h2>Database Statistics</h2>
 
-    <div id="chart2">
-        <svg></svg>
-    </div>
+<div id="chart2">
+    <svg></svg>
+</div>
 
 <script>
 
@@ -89,3 +89,26 @@ function exampleData() {
 }
 
 </script>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <td>Table</td>
+        <td>Total</td>
+        <td>Size (bytes)</td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($this->statistics as $tableName=>$stats) {
+        ?>
+        <tr>
+            <td><?php echo $tableName; ?></td>
+            <td><?php echo $stats['total']; ?></td>
+            <td><?php echo $stats['size']; ?></td>
+        </tr>
+    <?php
+    }
+    ?>
+    </tbody>
+</table>
