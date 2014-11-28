@@ -3,9 +3,9 @@
 
 <div class="row">
 
-    <form class="form-inline" role="form">
+    <form class="form-inline" role="form" method="POST">
 
-        <select class="form-control" name="email">
+        <select class="form-control" name="user_id">
             <?php
             foreach($this->assignees as $assignee) {
             ?>
@@ -39,5 +39,33 @@
         <li role="presentation" class="active"><a href="#">History</a></li>
         <li role="presentation"><a href="#">Future</a></li>
     </ul>
+
+</div>
+
+
+<div class="row">
+
+    <table class="table table-hover">
+        <?php
+        foreach($this->taskEvents as $event) {
+            ?>
+            <tr>
+                <td>
+                    <?php echo $event['sourceentityclass']; ?>
+                </td>
+                <td>
+                    <?php echo $event['type']; ?>
+                </td>
+                <td>
+                    <?php echo $event['changeset']; ?>
+                </td>
+                <td>
+                    <?php echo print_r($event['entity'], true); ?>
+                </td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
 
 </div>
