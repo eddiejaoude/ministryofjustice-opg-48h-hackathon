@@ -11,6 +11,7 @@ namespace Application;
 
 use Application\Service\DatabaseService;
 use Application\Service\ElasticSearchService;
+use Application\Service\UserService;
 use Elasticsearch\Client;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -65,6 +66,11 @@ class Module
                 'application.service.database' => function($sm) {
                     return new DatabaseService(
                         $sm->get('database.adapter')
+                    );
+                },
+                'application.service.user' => function($sm) {
+                    return new UserService(
+                        $sm->get('elasticsearch.client')
                     );
                 },
             )

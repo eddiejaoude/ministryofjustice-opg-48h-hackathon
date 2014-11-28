@@ -128,6 +128,32 @@ return array(
                     ),
                 ),
             ),
+            'user' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/user',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'User',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),
         ),
     ),
     'service_manager' => array(
@@ -155,6 +181,7 @@ return array(
             'Application\Controller\Case' => 'Application\Controller\CaseController',
             'Application\Controller\Database' => 'Application\Controller\DatabaseController',
             'Application\Controller\Elasticsearch' => 'Application\Controller\ElasticsearchController',
+            'Application\Controller\User' => 'Application\Controller\UserController',
         ),
     ),
     'view_manager' => array(
