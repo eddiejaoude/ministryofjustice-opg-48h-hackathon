@@ -22,12 +22,45 @@ class DatabaseService
     {
         $metadata = new \Zend\Db\Metadata\Metadata($this->client);
 
-        return $metadata;
+        $stats = array();
+        foreach($metadata->getTableNames() as $tableName) {
+            $stats[$tableName] = array(
+                'size' => $this->getTableSize($tableName),
+                'total' => $this->getTableCount($tableName)
+            );
+        }
+
+        return $stats;
     }
 
-    public function getSql()
+    public function getTableSize($table)
     {
-        return new Sql($this->client);
+        $connection = $this->client->getDriver()->getConnection();
+        $result = $connection->execute('SELECT
+            pg_size_pretty(pg_relation_size(C.oid)) AS "size"
+          FROM pg_class C
+          LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
+          WHERE relname = \'' . $table . '\'
+          ORDER BY pg_relation_size(C.oid) DESC');
+
+        $stmt = $result->getResource();
+
+        $resultSet = $stmt->fetchAll(\PDO::FETCH_OBJ);
+
+        return $resultSet[0]->size;
+    }
+    public function getTableCount($table)
+    {
+        $connection = $this->client->getDriver()->getConnection();
+        $result = $connection->execute('SELECT
+            COUNT(*)
+          FROM ' . $table);
+
+        $stmt = $result->getResource();
+
+        $resultSet = $stmt->fetchAll(\PDO::FETCH_OBJ);
+
+        return $resultSet[0]->count;
     }
     
     public function getTableList()

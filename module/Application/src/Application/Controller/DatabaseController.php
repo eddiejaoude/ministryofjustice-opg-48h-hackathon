@@ -16,10 +16,7 @@ class DatabaseController extends AbstractActionController
                     ->getTableList(),
                 'statistics' => $this->getServiceLocator()
                     ->get('application.service.database')
-                    ->getStats(),
-                'sql' => $this->getServiceLocator()
-                    ->get('application.service.database')
-                    ->getSql()
+                    ->getStats()
             )
         );
     }

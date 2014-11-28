@@ -10,13 +10,12 @@
     </thead>
     <tbody>
     <?php
-    foreach($this->statistics->getTableNames() as $tableName) {
-        var_dump($this->sql->select()->from($tableName)->columns(array('recordCount' => new \Zend\Db\Sql\Expression('COUNT(*)')))); exit;
+    foreach($this->statistics as $tableName=>$stats) {
         ?>
         <tr>
             <td><?php echo $tableName; ?></td>
-            <td><?php echo $tableName; ?></td>
-            <td><?php echo $tableName; ?></td>
+            <td><?php echo $stats['total']; ?></td>
+            <td><?php echo $stats['size']; ?></td>
         </tr>
     <?php
     }
